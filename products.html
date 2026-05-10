@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos — Le Perlé</title>
+  <meta name="description" content="Explora toda la colección de productos de skincare premium de Le Perlé. Sérums, limpiadores, mascarillas y más.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="promo-bar" aria-label="Información de la marca">
+    <div class="promo-bar__track">
+      <div class="promo-bar__item">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="6" width="16" height="11" rx="1"/><path d="M6 6V5a4 4 0 018 0v1"/></svg>
+        <span>Pago seguro</span>
+      </div>
+      <div class="promo-bar__sep" aria-hidden="true">·</div>
+      <div class="promo-bar__item">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 8l2-5h10l2 5"/><path d="M1 8h18v8a1 1 0 01-1 1H2a1 1 0 01-1-1V8z"/><path d="M7 17v-5h6v5"/></svg>
+        <span>Envíos 24/48h</span>
+      </div>
+      <div class="promo-bar__sep" aria-hidden="true">·</div>
+      <div class="promo-bar__item">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 6c0 0-3 2-3 4.5S10 14 10 14s3-1.5 3-3.5S10 6 10 6z"/></svg>
+        <span>Ingredientes naturales</span>
+      </div>
+      <div class="promo-bar__sep" aria-hidden="true">·</div>
+      <div class="promo-bar__item">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M10 2c-1 2-4 3-4 6a4 4 0 008 0c0-3-3-4-4-6z"/><path d="M10 14v4"/></svg>
+        <span>Cruelty Free</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="icon-btn" data-menu-toggle aria-label="Abrir menú">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+      <a href="index.html" class="header-logo" aria-label="Le Perlé — Inicio">
+        <span class="logo-mark">pé</span>
+        <span class="logo-sub">Le Perlé</span>
+      </a>
+      <div class="header-right">
+        <button class="icon-btn" data-search-toggle aria-label="Buscar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+        </button>
+        <a href="cart.html" class="icon-btn" aria-label="Carrito">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge">0</span>
+        </a>
+        <a href="favorites.html" class="icon-btn" aria-label="Favoritos">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          <span class="fav-badge" style="display:none">0</span>
+        </a>
+        <button class="icon-btn" aria-label="Mi cuenta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH PANEL -->
+  <div class="search-panel" id="search-panel" role="search">
+    <input type="search" placeholder="Buscar productos..." aria-label="Buscar productos">
+    <button class="search-close" id="search-close-btn" aria-label="Cerrar búsqueda">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true"></div>
+
+  <!-- SIDE MENU -->
+  <nav class="side-menu" id="side-menu" aria-label="Menú principal">
+    <div class="side-menu-header">
+      <a href="index.html" class="header-logo"><span class="logo-mark">pé</span></a>
+      <button class="menu-close-btn icon-btn" data-menu-close aria-label="Cerrar menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="side-menu-nav">
+      <a href="serums.html">Sérums</a>
+      <a href="limpiadores.html">Limpiador</a>
+      <a href="tratamiento-nocturno.html">Tratamiento nocturno</a>
+      <div class="side-menu-divider"></div>
+      <a href="products.html">Ver todos</a>
+      <button class="side-menu-club-btn" onclick="document.getElementById('welcome-popup').classList.add('is-open');document.body.style.overflow='hidden';document.querySelector('.side-menu').classList.remove('is-open');document.getElementById('menu-overlay').classList.remove('is-open');">LE PERLÉ CLUB</button>
+    </div>
+    <div class="side-menu-actions">
+      <a href="cart.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Carrito
+      </a>
+      <a href="favorites.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        Favoritos
+      </a>
+      <a href="#" aria-label="Mi cuenta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Mi cuenta
+      </a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header" style="padding: 4rem 0 2rem; text-align: center;">
+      <div class="container">
+        <h1 class="section-title" style="margin-bottom: 0.5rem;">Todos los productos</h1>
+        <p style="color: var(--clr-gray-mid); font-size: 0.9rem; font-weight: 200;">Descubre nuestra colección completa de skincare premium</p>
+      </div>
+    </section>
+
+    <!-- PRODUCTS GRID -->
+    <section class="featured-products" style="padding-top: 0;">
+      <div class="container">
+        <div class="products-grid" id="products-container">
+
+          <article class="product-card" data-category="serum">
+            <a href="product.html?id=serum-eclat-30ml">
+              <div class="product-card__image-wrap">
+                <img src="SerumEclat.jpeg" alt="Sérum Éclat" style="width:100%;height:100%;object-fit:cover;">
+                <span class="product-card__badge">Bestseller</span>
+                <button class="product-card__fav" data-fav aria-label="Añadir a favoritos">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                </button>
+              </div>
+            </a>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Sérum Éclat</h3>
+              <p class="product-card__variant">Sérum · 30ml</p>
+              <p class="product-card__price">80,00€</p>
+              <button class="product-card__add" data-add-cart data-product-id="serum-eclat-30ml" data-product-name="Sérum Éclat" data-product-variant="Sérum · 30ml" data-product-price="80.00" data-product-image="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&h=800&fit=crop">Añadir a la cesta</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="serum">
+            <a href="product.html?id=serum-intense-eclat-30ml">
+              <div class="product-card__image-wrap">
+                <img src="SerumIntenseEclat.jpeg" alt="Sérum Intense Éclat" style="width:100%;height:100%;object-fit:cover;">
+                <button class="product-card__fav" data-fav aria-label="Añadir a favoritos">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                </button>
+              </div>
+            </a>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Sérum Intense Éclat</h3>
+              <p class="product-card__variant">Sérum intensivo · 30ml</p>
+              <p class="product-card__price">80,00€</p>
+              <button class="product-card__add" data-add-cart data-product-id="serum-intense-eclat-30ml" data-product-name="Sérum Intense Éclat" data-product-variant="Sérum intensivo · 30ml" data-product-price="80.00" data-product-image="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&h=800&fit=crop">Añadir a la cesta</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="cleanser">
+            <a href="product.html?id=triple-ritual-cleanser-150ml">
+              <div class="product-card__image-wrap">
+                <img src="TripleRitualCleanser.jpeg" alt="Triple Ritual Cleanser" style="width:100%;height:100%;object-fit:cover;">
+                <button class="product-card__fav" data-fav aria-label="Añadir a favoritos">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                </button>
+              </div>
+            </a>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Triple Ritual Cleanser</h3>
+              <p class="product-card__variant">Limpiador facial · 150ml</p>
+              <p class="product-card__price">40,00€</p>
+              <button class="product-card__add" data-add-cart data-product-id="triple-ritual-cleanser-150ml" data-product-name="Triple Ritual Cleanser" data-product-variant="Limpiador facial · 150ml" data-product-price="40.00" data-product-image="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&h=800&fit=crop">Añadir a la cesta</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="cleanser">
+            <a href="product.html?id=soft-cloud-cleaner-100ml">
+              <div class="product-card__image-wrap">
+                <img src="SoftCloudCleanse.jpeg" alt="Soft Cloud Cleaner" style="width:100%;height:100%;object-fit:cover;">
+                <button class="product-card__fav" data-fav aria-label="Añadir a favoritos">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                </button>
+              </div>
+            </a>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Soft Cloud Cleaner</h3>
+              <p class="product-card__variant">Limpiador suave · 100ml</p>
+              <p class="product-card__price">53,00€</p>
+              <button class="product-card__add" data-add-cart data-product-id="soft-cloud-cleaner-100ml" data-product-name="Soft Cloud Cleaner" data-product-variant="Limpiador suave · 100ml" data-product-price="53.00" data-product-image="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&h=800&fit=crop">Añadir a la cesta</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="recambio">
+            <a href="product.html?id=recarga-serum-eclat-30ml">
+              <div class="product-card__image-wrap">
+                <img src="SerumEclatVeige.jpeg" alt="Recarga Sérum Éclat" style="width:100%;height:100%;object-fit:cover;">
+                <button class="product-card__fav" data-fav aria-label="Añadir a favoritos">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                </button>
+              </div>
+            </a>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Recarga Sérum Éclat</h3>
+              <p class="product-card__variant">Recarga · 30ml</p>
+              <p class="product-card__price">68,00€</p>
+              <button class="product-card__add" data-add-cart data-product-id="recarga-serum-eclat-30ml" data-product-name="Recarga Sérum Éclat" data-product-variant="Recarga · 30ml" data-product-price="68.00" data-product-image="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&h=800&fit=crop">Añadir a la cesta</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="recambio">
+            <a href="product.html?id=recarga-serum-intense-eclat-30ml">
+              <div class="product-card__image-wrap">
+                <img src="SerumIntenseEclatNaranja.jpeg" alt="Recarga Sérum Intense Éclat" style="width:100%;height:100%;object-fit:cover;">
+                <button class="product-card__fav" data-fav aria-label="Añadir a favoritos">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                </button>
+              </div>
+            </a>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Recarga Sérum Intense Éclat</h3>
+              <p class="product-card__variant">Recarga · 30ml</p>
+              <p class="product-card__price">68,00€</p>
+              <button class="product-card__add" data-add-cart data-product-id="recarga-serum-intense-eclat-30ml" data-product-name="Recarga Sérum Intense Éclat" data-product-variant="Recarga · 30ml" data-product-price="68.00" data-product-image="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&h=800&fit=crop">Añadir a la cesta</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="recambio">
+            <a href="product.html?id=recarga-solar-veil-spf50-50ml">
+              <div class="product-card__image-wrap">
+                <img src="SolarVeilSPF50.jpeg" alt="Recarga Solar Veil SPF 50" style="width:100%;height:100%;object-fit:cover;">
+                <button class="product-card__fav" data-fav aria-label="Añadir a favoritos">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                </button>
+              </div>
+            </a>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Recarga Solar Veil SPF 50</h3>
+              <p class="product-card__variant">Recarga · 50ml</p>
+              <p class="product-card__price">68,00€</p>
+              <button class="product-card__add" data-add-cart data-product-id="recarga-solar-veil-spf50-50ml" data-product-name="Recarga Solar Veil SPF 50" data-product-variant="Recarga · 50ml" data-product-price="68.00" data-product-image="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&h=800&fit=crop">Añadir a la cesta</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="legal.html">Aviso legal</a></li>
+            <li><a href="legal.html">Privacidad</a></li>
+            <li><a href="legal.html">Cookies</a></li>
+            <li><a href="legal.html">Condiciones de venta</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Le Perlé. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="products-db.js"></script>
+  <script src="script.js"></script>
+  <script src="cart-system.js"></script>
+  <script>
+    // Product Filter System
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const products = document.querySelectorAll('.product-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const filter = this.dataset.filter;
+          
+          // Update active state
+          filterBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Filter products
+          products.forEach(product => {
+            if (filter === 'all' || product.dataset.category === filter) {
+              product.style.display = '';
+              product.style.animation = 'fadeIn 0.3s ease';
+            } else {
+              product.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+

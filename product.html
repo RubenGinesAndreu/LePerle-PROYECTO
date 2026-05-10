@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producto — Le Perlé</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="promo-bar" aria-label="Información de la marca">
+    <div class="promo-bar__track">
+      <div class="promo-bar__item">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="6" width="16" height="11" rx="1"/><path d="M6 6V5a4 4 0 018 0v1"/></svg>
+        <span>Pago seguro</span>
+      </div>
+      <div class="promo-bar__sep" aria-hidden="true">·</div>
+      <div class="promo-bar__item">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 8l2-5h10l2 5"/><path d="M1 8h18v8a1 1 0 01-1 1H2a1 1 0 01-1-1V8z"/><path d="M7 17v-5h6v5"/></svg>
+        <span>Envíos 24/48h</span>
+      </div>
+      <div class="promo-bar__sep" aria-hidden="true">·</div>
+      <div class="promo-bar__item">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 6c0 0-3 2-3 4.5S10 14 10 14s3-1.5 3-3.5S10 6 10 6z"/></svg>
+        <span>Ingredientes naturales</span>
+      </div>
+      <div class="promo-bar__sep" aria-hidden="true">·</div>
+      <div class="promo-bar__item">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M10 2c-1 2-4 3-4 6a4 4 0 008 0c0-3-3-4-4-6z"/><path d="M10 14v4"/></svg>
+        <span>Cruelty Free</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="icon-btn" data-menu-toggle aria-label="Abrir menú">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+      <a href="index.html" class="header-logo" aria-label="Le Perlé — Inicio">
+        <span class="logo-mark">pé</span>
+        <span class="logo-sub">Le Perlé</span>
+      </a>
+      <div class="header-right">
+        <button class="icon-btn" data-search-toggle aria-label="Buscar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+        </button>
+        <a href="cart.html" class="icon-btn" aria-label="Carrito">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge">0</span>
+        </a>
+        <a href="favorites.html" class="icon-btn" aria-label="Favoritos">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          <span class="fav-badge" style="display:none">0</span>
+        </a>
+        <button class="icon-btn" aria-label="Mi cuenta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH PANEL -->
+  <div class="search-panel" id="search-panel" role="search">
+    <input type="search" placeholder="Buscar productos..." aria-label="Buscar productos">
+    <button class="search-close" id="search-close-btn" aria-label="Cerrar búsqueda">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true"></div>
+
+  <!-- SIDE MENU -->
+  <nav class="side-menu" id="side-menu" aria-label="Menú principal">
+    <div class="side-menu-header">
+      <a href="index.html" class="header-logo"><span class="logo-mark">pé</span></a>
+      <button class="menu-close-btn icon-btn" data-menu-close aria-label="Cerrar menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="side-menu-nav">
+      <a href="serums.html">Sérums</a>
+      <a href="limpiadores.html">Limpiador</a>
+      <a href="tratamiento-nocturno.html">Tratamiento nocturno</a>
+      <div class="side-menu-divider"></div>
+      <a href="products.html">Ver todos</a>
+      <button class="side-menu-club-btn" onclick="document.getElementById('welcome-popup').classList.add('is-open');document.body.style.overflow='hidden';document.querySelector('.side-menu').classList.remove('is-open');document.getElementById('menu-overlay').classList.remove('is-open');">LE PERLÉ CLUB</button>
+    </div>
+    <div class="side-menu-actions">
+      <a href="cart.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Carrito
+      </a>
+      <a href="favorites.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        Favoritos
+      </a>
+    </div>
+  </nav>
+
+  <!-- AUTH MODAL -->
+  <div class="modal-overlay" id="auth-modal">
+    <div class="modal">
+      <button class="modal-close" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <form id="login-form" class="modal-form">
+        <h2 class="modal-title">Iniciar sesión</h2>
+        <p class="modal-subtitle">Accede a tu cuenta Le Perlé</p>
+        <div class="form-field">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" placeholder="tucorreo@email.com" required>
+        </div>
+        <div class="form-field">
+          <label for="login-password">Contraseña</label>
+          <input type="password" id="login-password" placeholder="Tu contraseña" required>
+        </div>
+        <p class="form-error"></p>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn--primary btn--full">Entrar</button>
+        </div>
+        <p class="modal-toggle-text">
+          ¿No tienes cuenta? <button type="button" id="show-register">Regístrate</button>
+        </p>
+      </form>
+      <form id="register-form" class="modal-form hidden" style="display:none">
+        <h2 class="modal-title">Crear cuenta</h2>
+        <p class="modal-subtitle">Únete a la familia Le Perlé</p>
+        <div class="form-field">
+          <label for="register-name">Nombre</label>
+          <input type="text" id="register-name" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-field">
+          <label for="register-email">Email</label>
+          <input type="email" id="register-email" placeholder="tucorreo@email.com" required>
+        </div>
+        <div class="form-field">
+          <label for="register-password">Contraseña</label>
+          <input type="password" id="register-password" placeholder="Mínimo 6 caracteres" required>
+        </div>
+        <p class="form-error"></p>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn--primary btn--full">Crear cuenta</button>
+        </div>
+        <p class="modal-toggle-text">
+          ¿Ya tienes cuenta? <button type="button" id="show-login">Inicia sesión</button>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- WELCOME POPUP — Le Perlé Club -->
+  <div class="modal-overlay" id="welcome-popup">
+    <div class="club-popup">
+      <button class="club-popup__close" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="club-popup__image">
+        <img src="IMAGEN DE POPUP.jpg" alt="Glass Skin Le Perlé">
+      </div>
+      <div class="club-popup__body">
+        <h2 class="club-popup__title">Únete a<br>Le Perlé Club</h2>
+        <p class="club-popup__subtitle">Sé la primera en acceder a reposiciones y secretos profesionales para una Glass Skin perfecta.</p>
+        <form class="club-popup__form" novalidate>
+          <div class="club-popup__field">
+            <input type="email" id="club-email" placeholder="Correo electrónico" required>
+          </div>
+          <div class="club-popup__checks">
+            <label class="club-popup__check">
+              <input type="checkbox" required>
+              <span>He leído y acepto la <a href="legal.html">Política de Privacidad</a>.</span>
+            </label>
+            <label class="club-popup__check">
+              <input type="checkbox">
+              <span>Acepto recibir comunicaciones comerciales, novedades y contenido exclusivo de Le Perlé</span>
+            </label>
+          </div>
+          <button type="submit" class="club-popup__btn">QUIERO MI PASE VIP</button>
+          <button type="button" class="club-popup__skip" data-popup-close>No, gracias</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <main id="product-main">
+
+    <!-- Página de error si el ID no existe -->
+    <div id="product-not-found" style="display:none">
+      <section class="container" style="padding-top:var(--sp-lg);padding-bottom:var(--sp-lg);text-align:center;">
+        <h1 style="font-size:1.5rem;margin-bottom:1rem;">Producto no encontrado</h1>
+        <p style="color:var(--clr-gray-mid);margin-bottom:2rem;">El producto que buscas no existe o ha sido eliminado.</p>
+        <a href="products.html" class="btn btn--primary">Ver todos los productos</a>
+      </section>
+    </div>
+
+    <!-- PRODUCT SECTION (oculta hasta que JS la rellena) -->
+    <section class="container" id="product-section" style="padding-top:var(--sp-md);padding-bottom:var(--sp-lg);display:none">
+
+      <!-- Breadcrumb -->
+      <nav aria-label="Ruta de navegación" style="margin-bottom:var(--sp-md)">
+        <p style="font-size:0.72rem;color:var(--clr-gray-mid);letter-spacing:0.06em;">
+          <a href="index.html" style="color:var(--clr-gray-mid);transition:color 0.3s" onmouseover="this.style.color='var(--clr-black)'" onmouseout="this.style.color='var(--clr-gray-mid)'">Inicio</a>
+          &nbsp;/&nbsp;
+          <a id="breadcrumb-category" href="products.html" style="color:var(--clr-gray-mid)">Productos</a>
+          &nbsp;/&nbsp;
+          <span id="breadcrumb-name" style="color:var(--clr-black)"></span>
+        </p>
+      </nav>
+
+      <div class="product-layout">
+
+        <!-- GALLERY -->
+        <div class="product-gallery" aria-label="Galería del producto">
+          <div class="gallery-thumbs" id="gallery-thumbs" role="list"></div>
+          <div class="gallery-main">
+            <img id="main-product-image" src="" alt="" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+        </div>
+
+        <!-- PRODUCT INFO -->
+        <div class="product-info">
+          <p class="product-info__eyebrow" id="product-eyebrow"></p>
+          <h1 class="product-info__name" id="product-name"></h1>
+          <p class="product-info__tagline" id="product-tagline"></p>
+
+          <div class="product-price-row">
+            <p class="product-info__price" id="product-price"></p>
+            <div class="quantity-selector" aria-label="Seleccionar cantidad">
+              <span class="quantity-label">Cantidad</span>
+              <div class="quantity-controls">
+                <button type="button" class="qty-btn product-qty-decrease" aria-label="Disminuir cantidad">−</button>
+                <span id="quantity-value">1</span>
+                <button type="button" class="qty-btn product-qty-increase" aria-label="Aumentar cantidad">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="product-actions">
+            <button
+              class="btn btn--primary btn--full"
+              id="btn-add-cart"
+              data-add-cart
+              aria-label="Añadir al carrito">
+              Añadir a la cesta
+            </button>
+            <button class="fav-btn-large" data-fav aria-label="Añadir a favoritos">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+          </div>
+
+          <!-- Trust badges -->
+          <div class="product-trust-badges">
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Fórmula limpia</span>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              <span>Envío 24-48h</span>
+            </div>
+          </div>
+
+          <div class="product-highlight-grid" id="product-highlight-grid">
+            <article class="product-highlight-card">
+              <span class="product-highlight-card__title">Beneficios</span>
+              <ul id="product-benefits"></ul>
+            </article>
+            <article class="product-highlight-card">
+              <span class="product-highlight-card__title">Cómo usarlo</span>
+              <ul id="product-howto"></ul>
+            </article>
+            <article class="product-highlight-card">
+              <span class="product-highlight-card__title">Ingredientes activos</span>
+              <ul id="product-active-ingredients"></ul>
+            </article>
+            <article class="product-highlight-card">
+              <span class="product-highlight-card__title">Pieles recomendadas</span>
+              <ul id="product-skin-types"></ul>
+            </article>
+          </div>
+
+          <div class="product-effect-card">
+            <h2>El efecto</h2>
+            <p id="product-effect"></p>
+          </div>
+
+          <!-- TABS -->
+          <div class="product-tabs">
+            <div class="tabs-nav" role="tablist">
+              <button class="tab-btn is-active" data-tab="tab-desc" role="tab" aria-selected="true" aria-controls="tab-desc">Descripción</button>
+              <button class="tab-btn" data-tab="tab-ing" role="tab" aria-selected="false" aria-controls="tab-ing">Ingredientes</button>
+            </div>
+            <div class="tab-panel is-active" id="tab-desc" role="tabpanel">
+              <div id="product-description"></div>
+            </div>
+            <div class="tab-panel" id="tab-ing" role="tabpanel">
+              <p class="ingredients-list" id="product-ingredients"></p>
+              <p id="product-ingredients-note" class="ingredients-note"></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="product-reviews" id="product-reviews" style="display:none">
+      <div class="container">
+        <h2 class="section-title">Opiniones de clientes</h2>
+        <div class="reviews-grid" id="reviews-grid"></div>
+      </div>
+    </section>
+
+    <!-- APPLICATION SECTION -->
+    <section class="product-application" id="application-section" style="display:none">
+      <div class="container">
+        <div class="application-inner">
+          <div class="application-image">
+            <img id="application-image" src="" alt="Aplicación del producto" style="width:100%;height:100%;object-fit:cover;min-height:400px;">
+          </div>
+          <div class="application-content">
+            <h2>Aplicación del producto</h2>
+            <div class="application-steps" id="application-steps"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECOMMENDATIONS -->
+    <section class="recommendations" id="recommendations-section" style="display:none">
+      <div class="container">
+        <h2 class="section-title">Nuestra recomendación para ti</h2>
+        <div class="products-grid" id="recommendations-grid" style="grid-template-columns:repeat(3,1fr)"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <h4>Atención al cliente</h4>
+          <ul>
+            <li><a href="contact.html">Contáctenos</a></li>
+            <li><a href="legal.html">Envíos y entregas</a></li>
+            <li><a href="legal.html">Devoluciones</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="legal.html">Aviso legal</a></li>
+            <li><a href="legal.html">Privacidad</a></li>
+            <li><a href="legal.html">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <div class="footer-social">
+            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Le Perlé. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- IMPORTANTE: products-db.js se carga ANTES que script.js y cart-system.js -->
+  <script src="products-db.js"></script>
+  <script src="script.js"></script>
+  <script src="cart-system.js"></script>
+
+  <script>
+    (function () {
+
+      /* 1. Leer el ID de la URL */
+      var params    = new URLSearchParams(window.location.search);
+      var productId = params.get("id");
+      var product   = productId ? PRODUCTS[productId] : null;
+
+      /* 2. Si no existe el producto, mostrar 404 inline */
+      if (!product) {
+        document.getElementById("product-not-found").style.display = "block";
+        return;
+      }
+
+      /* 3. Actualizar <title> de la pestaña */
+      document.title = product.name + " — Le Perlé";
+
+      /* Helper: poner texto en un elemento por ID */
+      function setText(id, value) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = value;
+      }
+
+      /* Helper: formatear precio → "80,00€" */
+      function formatPrice(price) {
+        return price.toFixed(2).replace(".", ",") + "€";
+      }
+
+      /* 4. Breadcrumb */
+      setText("breadcrumb-name", product.name);
+      var bcCat = document.getElementById("breadcrumb-category");
+      if (bcCat) {
+        bcCat.textContent = product.categoryLabel;
+        bcCat.href        = product.categoryUrl;
+      }
+
+      /* 5. Imagen principal */
+      var mainImg = document.getElementById("main-product-image");
+      mainImg.src = product.image;
+      mainImg.alt = product.name;
+
+      /* 6. Galería de miniaturas (solo si hay más de 1 imagen) */
+      var thumbsWrap = document.getElementById("gallery-thumbs");
+      if (product.images && product.images.length > 1) {
+        product.images.forEach(function (src, i) {
+          var btn = document.createElement("button");
+          btn.className = "gallery-thumb" + (i === 0 ? " is-active" : "");
+          btn.setAttribute("aria-label", "Ver imagen " + (i + 1));
+          btn.setAttribute("role", "listitem");
+
+          var img = document.createElement("img");
+          img.src = src;
+          img.alt = product.name + " — vista " + (i + 1);
+          img.style.cssText = "width:100%;height:100%;object-fit:cover;";
+
+          btn.appendChild(img);
+          thumbsWrap.appendChild(btn);
+
+          btn.addEventListener("click", function () {
+            mainImg.src = src;
+            thumbsWrap.querySelectorAll(".gallery-thumb").forEach(function (b) {
+              b.classList.remove("is-active");
+            });
+            btn.classList.add("is-active");
+          });
+        });
+      } else {
+        /* Una sola imagen: ocultar miniaturas y colapsar su columna del grid */
+        thumbsWrap.style.display = "none";
+        var gallery = document.querySelector(".product-gallery");
+        if (gallery) gallery.style.gridTemplateColumns = "1fr";
+      }
+
+      /* 7. Textos del producto */
+      var cartBtn = document.getElementById("btn-add-cart");
+      var selectedQuantity = 1;
+      var qtyValue = document.getElementById("quantity-value");
+      var qtyIncrease = document.querySelector(".product-qty-increase");
+      var qtyDecrease = document.querySelector(".product-qty-decrease");
+
+      function updateProductQuantity(delta) {
+        selectedQuantity = Math.max(1, selectedQuantity + delta);
+        if (qtyValue) qtyValue.textContent = selectedQuantity;
+        if (cartBtn) cartBtn.dataset.productQuantity = selectedQuantity;
+      }
+
+      if (qtyIncrease) qtyIncrease.addEventListener("click", function() { updateProductQuantity(1); });
+      if (qtyDecrease) qtyDecrease.addEventListener("click", function() { updateProductQuantity(-1); });
+      updateProductQuantity(0);
+
+      setText("product-eyebrow",  product.categoryLabel || product.eyebrow || "");
+      setText("product-name",     product.name);
+      setText("product-tagline",  product.tagline);
+      setText("product-price",    formatPrice(product.price));
+      setText("product-effect",   product.effect || product.tagline || "");
+
+      function renderList(id, items) {
+        var list = document.getElementById(id);
+        if (!list) return;
+        list.innerHTML = "";
+        if (Array.isArray(items) && items.length) {
+          items.forEach(function(item) {
+            var li = document.createElement("li");
+            li.textContent = item;
+            list.appendChild(li);
+          });
+        } else if (typeof items === "string" && items.trim()) {
+          var li = document.createElement("li");
+          li.textContent = items;
+          list.appendChild(li);
+        } else {
+          list.innerHTML = "<li>Información en breve.</li>";
+        }
+      }
+
+      /* 8. Descripción (array de párrafos) */
+      var descEl = document.getElementById("product-description");
+      if (descEl && product.description) {
+        descEl.innerHTML = "";
+        product.description.forEach(function (para) {
+          var p = document.createElement("p");
+          p.textContent = para;
+          descEl.appendChild(p);
+        });
+      }
+
+      /* 9. Ingredientes y bloques de información */
+      setText("product-ingredients",      product.ingredients     || "");
+      setText("product-ingredients-note", product.ingredientsNote || "");
+      renderList("product-benefits",         product.benefits);
+      renderList("product-howto",           product.howToUse || product.applicationSteps);
+      renderList("product-active-ingredients", product.activeIngredients || product.ingredients?.split(",").slice(0, 5));
+      renderList("product-skin-types",       product.recommendedFor || [product.categoryLabel || "Todas las pieles"]);
+
+      /* 10. Botón "Añadir al carrito" — datos del producto actual */
+      if (cartBtn) {
+        cartBtn.setAttribute("data-product-id",      product.id);
+        cartBtn.setAttribute("data-product-name",    product.name);
+        cartBtn.setAttribute("data-product-variant", product.variant);
+        cartBtn.setAttribute("data-product-price",   product.price);
+        cartBtn.setAttribute("data-product-image",   product.image);
+        cartBtn.dataset.productQuantity = selectedQuantity;
+      }
+
+      /* 11. Opiniones */
+      var reviewsSection = document.getElementById("product-reviews");
+      var reviewsGrid = document.getElementById("reviews-grid");
+      if (reviewsSection && reviewsGrid) {
+        var reviews = Array.isArray(product.reviews) ? product.reviews : [];
+        if (reviews.length) {
+          reviewsGrid.innerHTML = "";
+          reviews.forEach(function(review) {
+            var card = document.createElement("article");
+            card.className = "review-card";
+            card.innerHTML =
+              '<div class="review-stars">' + '★'.repeat(review.stars) + '</div>' +
+              '<p class="review-comment">' + review.comment + '</p>' +
+              '<p class="review-author">' + review.name + '</p>';
+            reviewsGrid.appendChild(card);
+          });
+          reviewsSection.style.display = "block";
+        }
+      }
+
+      /* 12. Mostrar la sección principal */
+      document.getElementById("product-section").style.display = "block";
+
+      /* 12. Pasos de aplicación */
+      var appSection = document.getElementById("application-section");
+      var appInner   = appSection ? appSection.querySelector(".application-inner") : null;
+
+      if (product.beforeAfter) {
+        /* ── BEFORE / AFTER SLIDER ── */
+        var ba = product.beforeAfter;
+        appInner.innerHTML =
+          '<div class="application-image">' +
+            '<div class="ba-wrap" id="ba-wrap">' +
+              '<img class="ba-before" src="' + ba.imageBefore + '" alt="Antes">' +
+              '<img class="ba-after" id="ba-after-img" src="' + ba.imageAfter + '" alt="Despues">' +
+              '<div class="ba-handle" id="ba-handle"></div>' +
+              '<span class="ba-label ba-label--before" id="ba-label-before">' + ba.labelBefore + '</span>' +
+              '<span class="ba-label ba-label--after">' + ba.labelAfter + '</span>' +
+            '</div>' +
+          '</div>' +
+          '<div class="application-content">' +
+            '<h2>' + (ba.title || "El efecto") + '</h2>' +
+            '<p style="font-size:0.82rem;line-height:1.8;color:var(--clr-gray-dark);font-weight:300;">' +
+              'Desliza para ver la transformación real de la piel con ' + product.name + '.' +
+            '</p>' +
+          '</div>';
+
+        appSection.style.display = "block";
+
+        /* Slider logic — clip-path: images never move, only the reveal changes */
+        (function () {
+          var wrap      = document.getElementById("ba-wrap");
+          var afterImg  = document.getElementById("ba-after-img");
+          var handle    = document.getElementById("ba-handle");
+          var labelBef  = document.getElementById("ba-label-before");
+          var pct       = 50;
+
+          function setPos(x) {
+            var rect = wrap.getBoundingClientRect();
+            pct = Math.min(98, Math.max(2, ((x - rect.left) / rect.width) * 100));
+            /* clip-path reveals the "after" image from left to pct% */
+            afterImg.style.clipPath = "inset(0 " + (100 - pct) + "% 0 0)";
+            handle.style.left       = pct + "%";
+            /* hide "before" label when slider is mostly right */
+            if (labelBef) labelBef.style.opacity = pct > 80 ? "0" : "1";
+          }
+
+          var dragging = false;
+
+          wrap.addEventListener("mousedown", function(e) {
+            dragging = true;
+            setPos(e.clientX);
+            e.preventDefault();
+          });
+          window.addEventListener("mousemove", function(e) {
+            if (dragging) setPos(e.clientX);
+          });
+          window.addEventListener("mouseup", function() { dragging = false; });
+
+          wrap.addEventListener("touchstart", function(e) {
+            dragging = true;
+            setPos(e.touches[0].clientX);
+          }, { passive: true });
+          window.addEventListener("touchmove", function(e) {
+            if (dragging) setPos(e.touches[0].clientX);
+          }, { passive: true });
+          window.addEventListener("touchend", function() { dragging = false; });
+        })();
+
+      } else if (product.applicationSteps && product.applicationSteps.length) {
+        /* ── PASOS DE APLICACIÓN (comportamiento por defecto) ── */
+        var appImg   = appSection.querySelector("#application-image");
+        var appSteps = document.getElementById("application-steps");
+        if (appImg) { appImg.src = product.image; appImg.alt = "Aplicación de " + product.name; }
+
+        product.applicationSteps.forEach(function (text, i) {
+          var div = document.createElement("div");
+          div.className = "step";
+          var num = document.createElement("span");
+          num.className   = "step__num";
+          num.textContent = String(i + 1).padStart(2, "0");
+          var p = document.createElement("p");
+          p.className   = "step__text";
+          p.textContent = text;
+          div.appendChild(num);
+          div.appendChild(p);
+          appSteps.appendChild(div);
+        });
+
+        appSection.style.display = "block";
+      }
+
+      /* 13. Productos relacionados */
+      var recSection = document.getElementById("recommendations-section");
+      var recGrid    = document.getElementById("recommendations-grid");
+
+      var related = (product.relatedProducts || [])
+        .map(function (id) { return PRODUCTS[id]; })
+        .filter(Boolean);
+
+      if (related.length && recGrid) {
+        related.forEach(function (rel) {
+          var article = document.createElement("article");
+          article.className = "product-card";
+          article.innerHTML =
+            '<a href="product.html?id=' + rel.id + '">' +
+              '<div class="product-card__image-wrap">' +
+                '<img src="' + rel.image + '" alt="' + rel.name + '" style="width:100%;height:100%;object-fit:cover;">' +
+                '<button class="product-card__fav" data-fav aria-label="Añadir a favoritos">' +
+                  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor">' +
+                    '<path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>' +
+                  '</svg>' +
+                '</button>' +
+              '</div>' +
+            '</a>' +
+            '<div class="product-card__info">' +
+              '<h3 class="product-card__name">' + rel.name + '</h3>' +
+              '<p class="product-card__variant">' + rel.variant + '</p>' +
+              '<p class="product-card__price">' + formatPrice(rel.price) + '</p>' +
+              '<button class="product-card__add" data-add-cart' +
+                ' data-product-id="'      + rel.id      + '"' +
+                ' data-product-name="'    + rel.name    + '"' +
+                ' data-product-variant="' + rel.variant + '"' +
+                ' data-product-price="'   + rel.price   + '"' +
+                ' data-product-image="'   + rel.image   + '">' +
+                'Añadir a la cesta' +
+              '</button>' +
+            '</div>';
+          recGrid.appendChild(article);
+        });
+
+        recSection.style.display = "block";
+      }
+
+    })();
+  </script>
+
+</body>
+</html>
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button class="lightbox__close" id="lb-close" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="lightbox__prev" id="lb-prev" aria-label="Anterior" style="display:none">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <img class="lightbox__img" id="lb-img" src="" alt="">
+    <button class="lightbox__next" id="lb-next" aria-label="Siguiente" style="display:none">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <span class="lightbox__counter" id="lb-counter"></span>
+  </div>
+
+  <script>
+    (function () {
+      var lightbox   = document.getElementById("lightbox");
+      var lbImg      = document.getElementById("lb-img");
+      var lbClose    = document.getElementById("lb-close");
+      var lbPrev     = document.getElementById("lb-prev");
+      var lbNext     = document.getElementById("lb-next");
+      var lbCounter  = document.getElementById("lb-counter");
+      var mainImg    = document.getElementById("main-product-image");
+      var galleryMain = mainImg ? mainImg.closest(".gallery-main") : null;
+
+      // Wait for products-db data to be available (the main script runs first)
+      // We read the images list from the already-built thumbnail buttons,
+      // plus the main image — so no dependency on PRODUCTS directly.
+      function getImageList() {
+        var thumbImgs = document.querySelectorAll("#gallery-thumbs .gallery-thumb img");
+        if (thumbImgs.length > 0) {
+          return Array.from(thumbImgs).map(function(i){ return i.src; });
+        }
+        // Single image: just the main one
+        return mainImg ? [mainImg.src] : [];
+      }
+
+      var currentIndex = 0;
+
+      function openLightbox(index) {
+        var images = getImageList();
+        if (!images.length) return;
+        currentIndex = index;
+        lbImg.src = images[currentIndex];
+        lbImg.alt = mainImg ? mainImg.alt : "";
+
+        if (images.length > 1) {
+          lbPrev.style.display = "";
+          lbNext.style.display = "";
+          lbCounter.textContent = (currentIndex + 1) + " / " + images.length;
+        } else {
+          lbPrev.style.display = "none";
+          lbNext.style.display = "none";
+          lbCounter.textContent = "";
+        }
+
+        lightbox.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("is-open");
+        document.body.style.overflow = "";
+      }
+
+      function showPrev() {
+        var images = getImageList();
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        lbImg.src = images[currentIndex];
+        lbCounter.textContent = (currentIndex + 1) + " / " + images.length;
+      }
+
+      function showNext() {
+        var images = getImageList();
+        currentIndex = (currentIndex + 1) % images.length;
+        lbImg.src = images[currentIndex];
+        lbCounter.textContent = (currentIndex + 1) + " / " + images.length;
+      }
+
+      // Open on main image click
+      if (galleryMain) {
+        galleryMain.addEventListener("click", function () {
+          // Find current index from active thumb
+          var thumbs = document.querySelectorAll("#gallery-thumbs .gallery-thumb");
+          var activeIdx = 0;
+          thumbs.forEach(function(t, i){ if (t.classList.contains("is-active")) activeIdx = i; });
+          openLightbox(thumbs.length > 0 ? activeIdx : 0);
+        });
+      }
+
+      // Also open on thumbnail double-click
+      document.getElementById("gallery-thumbs").addEventListener("dblclick", function(e) {
+        var thumb = e.target.closest(".gallery-thumb");
+        if (!thumb) return;
+        var thumbs = Array.from(document.querySelectorAll("#gallery-thumbs .gallery-thumb"));
+        openLightbox(thumbs.indexOf(thumb));
+      });
+
+      // Controls
+      lbClose.addEventListener("click", closeLightbox);
+      lbPrev.addEventListener("click", function(e){ e.stopPropagation(); showPrev(); });
+      lbNext.addEventListener("click", function(e){ e.stopPropagation(); showNext(); });
+
+      // Close on backdrop click
+      lightbox.addEventListener("click", function(e){
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      // Keyboard: Escape, arrows
+      document.addEventListener("keydown", function(e) {
+        if (!lightbox.classList.contains("is-open")) return;
+        if (e.key === "Escape")      closeLightbox();
+        if (e.key === "ArrowLeft")   showPrev();
+        if (e.key === "ArrowRight")  showNext();
+      });
+    })();
+  </script>
+

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nosotros — Le Perlé</title>
+  <meta name="description" content="Descubre la historia de Le Perlé, nuestra filosofía y compromiso con la belleza natural y sostenible.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="promo-bar" aria-label="Información de la marca">
+    <div class="promo-bar__track">
+      <div class="promo-bar__item">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="6" width="16" height="11" rx="1"/><path d="M6 6V5a4 4 0 018 0v1"/></svg>
+        <span>Pago seguro</span>
+      </div>
+      <div class="promo-bar__sep" aria-hidden="true">·</div>
+      <div class="promo-bar__item">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 8l2-5h10l2 5"/><path d="M1 8h18v8a1 1 0 01-1 1H2a1 1 0 01-1-1V8z"/><path d="M7 17v-5h6v5"/></svg>
+        <span>Envíos 24/48h</span>
+      </div>
+      <div class="promo-bar__sep" aria-hidden="true">·</div>
+      <div class="promo-bar__item">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 6c0 0-3 2-3 4.5S10 14 10 14s3-1.5 3-3.5S10 6 10 6z"/></svg>
+        <span>Ingredientes naturales</span>
+      </div>
+      <div class="promo-bar__sep" aria-hidden="true">·</div>
+      <div class="promo-bar__item">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M10 2c-1 2-4 3-4 6a4 4 0 008 0c0-3-3-4-4-6z"/><path d="M10 14v4"/></svg>
+        <span>Cruelty Free</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="icon-btn" data-menu-toggle aria-label="Abrir menú">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+      <a href="index.html" class="header-logo" aria-label="Le Perlé — Inicio">
+        <span class="logo-mark">pé</span>
+        <span class="logo-sub">Le Perlé</span>
+      </a>
+      <div class="header-right">
+        <button class="icon-btn" data-search-toggle aria-label="Buscar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+        </button>
+        <a href="cart.html" class="icon-btn" aria-label="Carrito">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge">0</span>
+        </a>
+        <a href="favorites.html" class="icon-btn" aria-label="Favoritos">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          <span class="fav-badge" style="display:none">0</span>
+        </a>
+        <button class="icon-btn" aria-label="Mi cuenta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH PANEL -->
+  <div class="search-panel" id="search-panel" role="search">
+    <input type="search" placeholder="Buscar productos..." aria-label="Buscar productos">
+    <button class="search-close" id="search-close-btn" aria-label="Cerrar búsqueda">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true"></div>
+
+  <!-- SIDE MENU -->
+  <nav class="side-menu" id="side-menu" aria-label="Menú principal">
+    <div class="side-menu-header">
+      <a href="index.html" class="header-logo"><span class="logo-mark">pé</span></a>
+      <button class="menu-close-btn icon-btn" data-menu-close aria-label="Cerrar menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="side-menu-nav">
+      <a href="serums.html">Sérums</a>
+      <a href="limpiadores.html">Limpiador</a>
+      <a href="tratamiento-nocturno.html">Tratamiento nocturno</a>
+      <div class="side-menu-divider"></div>
+      <a href="products.html">Ver todos</a>
+      <button class="side-menu-club-btn" onclick="document.getElementById('welcome-popup').classList.add('is-open');document.body.style.overflow='hidden';document.querySelector('.side-menu').classList.remove('is-open');document.getElementById('menu-overlay').classList.remove('is-open');">LE PERLÉ CLUB</button>
+    </div>
+    <div class="side-menu-actions">
+      <a href="cart.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Carrito
+      </a>
+      <a href="favorites.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        Favoritos
+      </a>
+      <a href="#" aria-label="Mi cuenta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Mi cuenta
+      </a>
+    </div>
+  </nav>
+
+  <!-- AUTH MODAL -->
+  <div class="modal-overlay" id="auth-modal">
+    <div class="modal">
+      <button class="modal-close" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      
+      <form id="login-form" class="modal-form">
+        <h2 class="modal-title">Iniciar sesión</h2>
+        <p class="modal-subtitle">Accede a tu cuenta Le Perlé</p>
+        
+        <div class="form-field">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" placeholder="tucorreo@email.com" required>
+        </div>
+        
+        <div class="form-field">
+          <label for="login-password">Contraseña</label>
+          <input type="password" id="login-password" placeholder="Tu contraseña" required>
+        </div>
+        
+        <p class="form-error"></p>
+        
+        <div class="modal-actions">
+          <button type="submit" class="btn btn--primary btn--full">Entrar</button>
+        </div>
+        
+        <p class="modal-toggle-text">
+          ¿No tienes cuenta? <button type="button" id="show-register">Regístrate</button>
+        </p>
+      </form>
+      
+      <form id="register-form" class="modal-form hidden" style="display:none">
+        <h2 class="modal-title">Crear cuenta</h2>
+        <p class="modal-subtitle">Únete a la familia Le Perlé</p>
+        
+        <div class="form-field">
+          <label for="register-name">Nombre</label>
+          <input type="text" id="register-name" placeholder="Tu nombre" required>
+        </div>
+        
+        <div class="form-field">
+          <label for="register-email">Email</label>
+          <input type="email" id="register-email" placeholder="tucorreo@email.com" required>
+        </div>
+        
+        <div class="form-field">
+          <label for="register-password">Contraseña</label>
+          <input type="password" id="register-password" placeholder="Mínimo 6 caracteres" required>
+        </div>
+        
+        <p class="form-error"></p>
+        
+        <div class="modal-actions">
+          <button type="submit" class="btn btn--primary btn--full">Crear cuenta</button>
+        </div>
+        
+        <p class="modal-toggle-text">
+          ¿Ya tienes cuenta? <button type="button" id="show-login">Inicia sesión</button>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <main>
+    <section class="about-page container">
+      
+      <div class="about-hero">
+        <h1>Sobre Nosotros</h1>
+        <p>En Le Perlé creemos que la verdadera belleza nace del cuidado consciente. Creamos productos que respetan tu piel y el planeta, combinando la sabiduría de la naturaleza con la ciencia más avanzada.</p>
+      </div>
+
+      <div class="about-section">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&h=750&fit=crop" alt="Nuestra historia" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="about-content">
+          <h2>Nuestra Historia</h2>
+          <p>Le Perlé nació en 2018 en Barcelona, inspirada por la búsqueda de una cosmética que fuera tan efectiva como respetuosa. Nuestra fundadora, tras años en la industria de la belleza, decidió crear una marca que pusiera la salud de la piel por encima de todo.</p>
+          <p>Comenzamos en un pequeño laboratorio, formulando productos con ingredientes de origen natural certificado. Hoy, nuestra filosofía sigue siendo la misma: ofrecer tratamientos de alta eficacia que respeten tanto tu piel como el medio ambiente.</p>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1617897903246-719242758050?w=600&h=750&fit=crop" alt="Nuestra filosofía" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="about-content">
+          <h2>Nuestra Filosofía</h2>
+          <p>Creemos en la belleza sin compromisos. Cada fórmula de Le Perlé está diseñada para ofrecer resultados visibles sin recurrir a ingredientes agresivos o cuestionables.</p>
+          <p>Nuestro enfoque se basa en tres pilares: eficacia probada, fórmulas limpias y sostenibilidad en cada paso del proceso. Desde la selección de ingredientes hasta el packaging, cada decisión refleja nuestro compromiso con el bienestar.</p>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=750&fit=crop" alt="Sostenibilidad" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="about-content">
+          <h2>Compromiso Sostenible</h2>
+          <p>La sostenibilidad no es una tendencia para nosotros, es un principio fundamental. Utilizamos envases reciclables y reciclados, reducimos el uso de plástico y ofrecemos opciones de recarga para muchos de nuestros productos.</p>
+          <p>Trabajamos con proveedores que comparten nuestra visión de un futuro más verde, y donamos parte de nuestros beneficios a organizaciones dedicadas a la conservación del medio ambiente.</p>
+        </div>
+      </div>
+
+      <div class="about-values">
+        <div class="about-value">
+          <h3>Fórmulas Limpias</h3>
+          <p>Sin parabenos, sin siliconas, sin fragancias artificiales. Solo ingredientes que tu piel necesita.</p>
+        </div>
+        <div class="about-value">
+          <h3>Cruelty Free</h3>
+          <p>Nunca testamos en animales. Todos nuestros productos están certificados cruelty-free.</p>
+        </div>
+        <div class="about-value">
+          <h3>Eco-Packaging</h3>
+          <p>Envases reciclables y sistema de recargas para minimizar nuestro impacto ambiental.</p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <h4>Atención al cliente</h4>
+          <ul>
+            <li><a href="contact.html">Contáctenos</a></li>
+            <li><a href="legal.html">Envíos y entregas</a></li>
+            <li><a href="legal.html">Devoluciones</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="legal.html">Aviso legal</a></li>
+            <li><a href="legal.html">Privacidad</a></li>
+            <li><a href="legal.html">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <div class="footer-social">
+            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Le Perlé. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="products-db.js"></script>
+  <script src="script.js"></script>
+  <script src="cart-system.js"></script>
+</body>
+</html>

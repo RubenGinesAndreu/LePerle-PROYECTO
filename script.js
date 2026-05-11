@@ -31,6 +31,16 @@
       ingredients: 'Aqua, Niacinamide, Glycerin, Pentylene Glycol, Zinc PCA, Sodium Hyaluronate, Panthenol, Allantoin, Adenosine, Centella Asiatica Extract, Saccharide Isomerate, Bifida Ferment Lysate, Lactobacillus Ferment, Ceramide NP, Phytosphingosine, Cholesterol, Tocopherol, Camellia Sinensis Leaf Extract.'
     },
     {
+      id: 'serum-intense-eclat-30ml',
+      name: 'Sérum Intense Éclat',
+      variant: 'Sérum intensivo · 30ml',
+      price: 80,
+      category: 'Sérum facial',
+      image: 'SerumIntenseEclat.jpeg',
+      description: 'Sérum Intense Éclat concentra activos premium para una piel visiblemente más luminosa, homogénea y tersa.',
+      ingredients: 'Aqua, Niacinamide (10%), Glycerin, Pentylene Glycol, Zinc PCA, Sodium Hyaluronate, Alpha-Arbutin, Tranexamic Acid, Panthenol, Allantoin, Adenosine, Centella Asiatica Extract, Saccharide Isomerate, Bifida Ferment Lysate, Lactobacillus Ferment, Ceramide NP, Tocopherol, Camellia Sinensis Leaf Extract.'
+    },
+    {
       id: 'triple-ritual-cleanser-150ml',
       name: 'Triple Ritual Cleanser',
       variant: 'Limpiador facial · 150ml',
@@ -71,14 +81,34 @@
       ingredients: 'Aqua, Cyclopentasiloxane, Titanium Dioxide, Glycerin, Niacinamide, Dimethicone, Iron Oxides, Sodium Hyaluronate, Vitamin E.'
     },
     {
-      id: 'recarga-serum-eclat-50ml',
+      id: 'recarga-serum-eclat-30ml',
       name: 'Recarga Sérum Éclat',
-      variant: 'Recambio · 50ml',
-      price: 65,
+      variant: 'Recarga · 30ml',
+      price: 68,
       category: 'Sérum facial',
-      image: 'SerumEclatRecarga.jpeg',
-      description: 'Recambio eco-friendly del Sérum Éclat. Misma fórmula premium con menor impacto ambiental.',
-      ingredients: 'Aqua, Niacinamide, Glycerin, Pentylene Glycol, Zinc PCA, Sodium Hyaluronate, Panthenol, Allantoin, Adenosine, Centella Asiatica Extract.'
+      image: 'SerumEclatVeige.jpeg',
+      description: 'Recarga sostenible para tu Sérum Éclat. Misma fórmula premium, menor impacto ambiental.',
+      ingredients: 'Aqua, Niacinamide, Glycerin, Pentylene Glycol, Zinc PCA, Sodium Hyaluronate, Panthenol, Allantoin, Adenosine, Centella Asiatica Extract, Saccharide Isomerate, Bifida Ferment Lysate, Lactobacillus Ferment, Ceramide NP, Phytosphingosine, Cholesterol, Tocopherol, Camellia Sinensis Leaf Extract.'
+    },
+    {
+      id: 'recarga-serum-intense-eclat-30ml',
+      name: 'Recarga Sérum Intense Éclat',
+      variant: 'Recarga · 30ml',
+      price: 68,
+      category: 'Sérum facial',
+      image: 'SerumIntenseEclatNaranja.jpeg',
+      description: 'Recarga sostenible para tu Sérum Intense Éclat. Compromiso con la piel y con el planeta.',
+      ingredients: 'Aqua, Niacinamide (10%), Glycerin, Pentylene Glycol, Zinc PCA, Sodium Hyaluronate, Alpha-Arbutin, Tranexamic Acid, Panthenol, Allantoin, Adenosine, Centella Asiatica Extract, Saccharide Isomerate, Bifida Ferment Lysate, Lactobacillus Ferment, Ceramide NP, Tocopherol, Camellia Sinensis Leaf Extract.'
+    },
+    {
+      id: 'recarga-solar-veil-spf50-50ml',
+      name: 'Recarga Solar Veil SPF 50',
+      variant: 'Recarga · 50ml',
+      price: 68,
+      category: 'Protección solar',
+      image: 'SolarVeilSPF50.jpeg',
+      description: 'Recarga para tu Solar Veil SPF 50. Máxima protección, mínimo residuo.',
+      ingredients: 'Aqua, Homosalate, Ethylhexyl Salicylate, Butyl Methoxydibenzoylmethane, Octocrylene, Glycerin, Niacinamide, Sodium Hyaluronate, Tocopherol, Panthenol, Allantoin, Camellia Sinensis Leaf Extract, Bisabolol.'
     },
     {
       id: 'hydra-boost-cream-50ml',

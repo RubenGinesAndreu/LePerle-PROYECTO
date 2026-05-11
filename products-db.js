@@ -18,7 +18,9 @@ const PRODUCTS = {
     categoryUrl: "serums.html",
     image: "SerumEclat.jpeg",
     images: [
-      "SerumEclat.jpeg"
+      "SerumEclat.jpeg",
+      "SERUM_ECLAT_2.jpeg",
+      "SERUM_ECLAT_3.jpeg"
     ],
     description: [
       "Sérum Éclat es un concentrado de luminosidad que despierta la belleza natural de tu piel con un acabado fresco y sedoso.",

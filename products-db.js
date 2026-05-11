@@ -53,8 +53,12 @@ const PRODUCTS = {
       { stars: 5, name: "Lucía", comment: "Sensación de piel saludable y un glow natural que dura todo el día." },
       { stars: 4, name: "Ana", comment: "Ideal para mi rutina minimalista. Rostro más luminoso y calmado." }
     ],
-    ingredients: "Aqua, Niacinamide, Glycerin, Pentylene Glycol, Zinc PCA, Sodium Hyaluronate, Panthenol, Allantoin, Adenosine, Centella Asiatica Extract, Saccharide Isomerate, Bifida Ferment Lysate, Lactobacillus Ferment, Ceramide NP, Phytosphingosine, Cholesterol, Tocopherol, Camellia Sinensis Leaf Extract.",
-    ingredientsNote: "*Ingredientes de origen natural certificado. Sin parabenos, sin silicona, sin fragancia artificial.",
+    ingredients:[
+      "Niacinamida coreana: ayuda a unificar el tono y mejorar el aspecto de la textura.",
+      "Ácido hialurónico: aporta hidratación y confort inmediato.",
+      "Extracto de perla purificada: potencia la luminosidad y el acabado glow."
+    ],
+    ingredientsNote: "*Ingredientes de origen natural certificado.",
     applicationSteps: [
       "Aplicar sobre la piel limpia y seca. Distribuir 3-4 gotas por el rostro con movimientos suaves ascendentes.",
       "Masajear suavemente con la yema de los dedos hasta su completa absorción, prestando especial atención a las zonas de mayor brillo.",
@@ -67,6 +71,7 @@ const PRODUCTS = {
       imageAfter: "IMAGEN PÁGINA PRODUCTO SÉRUM ÉCLAT (AFTER).jpg",
       title: "El efecto"
     },
+    effectSlider: "Piel fresca, luminosa y uniforme con un acabado glow natural desde la primera aplicación.",
     relatedProducts: ["soft-cloud-cleaner-100ml", "serum-intense-eclat-30ml", "recarga-serum-eclat-30ml"]
   },
 

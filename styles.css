@@ -1342,6 +1342,16 @@ ul { list-style: none; }
   color: var(--clr-gray-mid);
   font-weight: 300;
 }
+.ingredients-list p {
+  margin-bottom: 1rem;
+}
+.ingredients-list p:last-child {
+  margin-bottom: 0;
+}
+.ingredients-list strong {
+  color: var(--clr-black);
+  font-weight: 500;
+}
 
 /* ============================================================
    PRODUCT APPLICATION SECTION

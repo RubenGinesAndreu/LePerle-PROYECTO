@@ -286,11 +286,6 @@
             </article>
           </div>
 
-          <div class="product-effect-card">
-            <h2>El efecto</h2>
-            <p id="product-effect"></p>
-          </div>
-
           <!-- TABS -->
           <div class="product-tabs">
             <div class="tabs-nav" role="tablist">
@@ -496,7 +491,7 @@
       setText("product-name",     product.name);
       setText("product-tagline",  product.tagline);
       setText("product-price",    formatPrice(product.price));
-      setText("product-effect",   product.effect || product.tagline || "");
+
 
       function renderList(id, items) {
         var list = document.getElementById(id);
@@ -529,7 +524,17 @@
       }
 
       /* 9. Ingredientes y bloques de información */
-      setText("product-ingredients",      product.ingredients     || "");
+      /* Ingredientes: soporta array o string */
+      var ingEl = document.getElementById("product-ingredients");
+      if (ingEl) {
+        if (Array.isArray(product.ingredients)) {
+          ingEl.innerHTML = product.ingredients.map(function(line) {
+            return "<p>" + line + "</p>";
+          }).join("");
+        } else {
+          ingEl.textContent = product.ingredients || "";
+        }
+      }
       setText("product-ingredients-note", product.ingredientsNote || "");
       renderList("product-benefits",         product.benefits);
       renderList("product-howto",           product.howToUse || product.applicationSteps);
@@ -588,9 +593,7 @@
           '</div>' +
           '<div class="application-content">' +
             '<h2>' + (ba.title || "El efecto") + '</h2>' +
-            '<p style="font-size:0.82rem;line-height:1.8;color:var(--clr-gray-dark);font-weight:300;">' +
-              'Desliza para ver la transformación real de la piel con ' + product.name + '.' +
-            '</p>' +
+            (product.effectSlider ? '<p style="font-size:1rem;line-height:1.8;color:var(--clr-black);font-weight:300;margin-top:1rem;">' + product.effectSlider + '</p>' : '') +
           '</div>';
 
         appSection.style.display = "block";
